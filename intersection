@@ -1,0 +1,31 @@
+digraph {
+	fake [style=invisible]
+	"[s0,0]"
+	"[s4,1]"
+	"[s2,1]"
+	"[s5,3]" [shape=doublecircle]
+	"[s3,1]"
+	"[s5,2]"
+	"[s6,1]"
+	"[s1,2]"
+	"[s_init,0]" [root=true]
+	fake -> "[s_init,0]" [style=bold]
+	"[s5,3]" -> "[s1,2]" [label="mov_w1h,s1"]
+	"[s3,1]" -> "[s4,1]" [label="mov_w12h,s4"]
+	"[s6,1]" -> "[s2,1]" [label="mov_w2h,s2"]
+	"[s5,2]" -> "[s1,2]" [label="mov_w1h,s1"]
+	"[s6,1]" -> "[s6,1]" [label=wait]
+	"[s0,0]" -> "[s6,1]" [label="mov_hw2,s6"]
+	"[s5,3]" -> "[s5,3]" [label=wait]
+	"[s3,1]" -> "[s3,1]" [label=wait]
+	"[s0,0]" -> "[s5,2]" [label="mov_hw1,s5"]
+	"[s4,1]" -> "[s4,1]" [label=wait]
+	"[s5,2]" -> "[s5,3]" [label=wait]
+	"[s5,2]" -> "[s3,1]" [label="mov_w1w2,s3"]
+	"[s2,1]" -> "[s2,1]" [label=wait]
+	"[s6,1]" -> "[s3,1]" [label="mov_w2w1,s3"]
+	"[s0,0]" -> "[s0,0]" [label=wait]
+	"[s5,3]" -> "[s3,1]" [label="mov_w1w2,s3"]
+	"[s_init,0]" -> "[s0,0]" [label="start,s0"]
+	"[s1,2]" -> "[s1,2]" [label=wait]
+}

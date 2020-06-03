@@ -1,0 +1,15 @@
+digraph {
+	fake [style=invisible]
+	0 [root=true]
+	1
+	2 [shape=doublecircle]
+	fake -> 0 [style=bold]
+	2 -> 0 [label="~at_h & ~vs_w1"]
+	2 -> 1 [label="vs_w1 & ~at_h"]
+	0 -> 0 [label="~vs_w1"]
+	1 -> 2 [label="at_h & vs_w2"]
+	1 -> 1 [label="vs_w1 & (~at_h | ~vs_w2)"]
+	1 -> 0 [label="~vs_w1 & (~at_h | ~vs_w2)"]
+	0 -> 1 [label=vs_w1]
+	2 -> 2 [label=at_h]
+}
