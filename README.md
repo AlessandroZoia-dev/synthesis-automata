@@ -1,4 +1,5 @@
 # Implement synthesis exploiting the tools LTLf2DFA  and  FLLOAT  to  generate the DFA 
+# First experiments using COZMO robot
 
 Dependencies:
 
