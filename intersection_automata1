@@ -1,0 +1,27 @@
+digraph {
+	fake [style=invisible]
+	"[s2,0]"
+	"[s5,0]"
+	"[s_init,0]" [root=true]
+	"[s3,1]"
+	"[s6,0]"
+	"[s4,2]" [shape=doublecircle]
+	"[s1,0]"
+	"[s0,0]"
+	fake -> "[s_init,0]" [style=bold]
+	"[s5,0]" -> "[s5,0]" [label="wait,s5"]
+	"[s0,0]" -> "[s0,0]" [label="wait,s0"]
+	"[s5,0]" -> "[s3,1]" [label="mov_w1w2,s3"]
+	"[s4,2]" -> "[s4,2]" [label="wait,s4"]
+	"[s1,0]" -> "[s1,0]" [label="wait,s1"]
+	"[s5,0]" -> "[s1,0]" [label="mov_w1h,s1"]
+	"[s2,0]" -> "[s2,0]" [label="wait,s2"]
+	"[s0,0]" -> "[s6,0]" [label="mov_hw2,s6"]
+	"[s0,0]" -> "[s5,0]" [label="mov_hw1,s5"]
+	"[s3,1]" -> "[s3,1]" [label="wait,s3"]
+	"[s6,0]" -> "[s3,1]" [label="mov_w2w1,s3"]
+	"[s6,0]" -> "[s2,0]" [label="mov_w2h,s2"]
+	"[s6,0]" -> "[s6,0]" [label="wait,s6"]
+	"[s_init,0]" -> "[s0,0]" [label="start,s0"]
+	"[s3,1]" -> "[s4,2]" [label="mov_w12h,s4"]
+}

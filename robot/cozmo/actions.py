@@ -25,16 +25,18 @@ def init_robot_world(robot: cozmo.robot.Robot):
 
 
 def wait(robot: cozmo.robot.Robot):
-    print("wait action execution")
+    print("Robot wait action execution ...")
     try:
         robot.say_text(text="I have to wait here").wait_for_completed(10)
         robot.play_anim(name="anim_bored_event_02").wait_for_completed(10)
+        return None
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def mov_hw1(robot: cozmo.robot.Robot):
-    print("mov_hw1 action execution")
+    print("Robot mov_hw1 action execution ...")
     try:
         robot.go_to_pose(exit_home, relative_to_robot=False).wait_for_completed(20)
         robot.go_to_pose(w1, relative_to_robot=False).wait_for_completed(20)
@@ -42,12 +44,14 @@ def mov_hw1(robot: cozmo.robot.Robot):
         cube1.set_lights(cozmo.lights.Light(cozmo.lights.Color(rgb=(102, 255, 102), name="green")))
         robot.say_text(text="I'm at way point one").wait_for_completed(10)
         robot.play_anim(name="anim_memorymatch_successhand_cozmo_01").wait_for_completed(10)
+        return "s5"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def mov_hw2(robot: cozmo.robot.Robot):
-    print("mov_hw2 action execution")
+    print("Robot mov_hw2 action execution ...")
     try:
         robot.go_to_pose(exit_home, relative_to_robot=False).wait_for_completed(20)
         robot.go_to_pose(w2, relative_to_robot=False).wait_for_completed(20)
@@ -55,73 +59,87 @@ def mov_hw2(robot: cozmo.robot.Robot):
         cube2.set_lights(cozmo.lights.Light(cozmo.lights.Color(rgb=(255, 255, 102), name="yellow")))
         robot.say_text(text="I'm at way point two").wait_for_completed(10)
         robot.play_anim(name="anim_memorymatch_successhand_cozmo_01").wait_for_completed(10)
+        return "s6"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def mov_w1w2(robot: cozmo.robot.Robot):
-    print("mov_w1w2 action execution")
+    print("Robot mov_w1w2 action execution ...")
     try:
         robot.go_to_pose(w2, relative_to_robot=False).wait_for_completed(20)
         cube2 = robot.world.get_light_cube(LightCube2Id)
         cube2.set_lights(cozmo.lights.Light(cozmo.lights.Color(rgb=(255, 255, 102), name="yellow")))
         robot.say_text(text="I visited way point one and now I'm in way point two").wait_for_completed(10)
         robot.play_anim(name="anim_memorymatch_successhand_cozmo_01").wait_for_completed(10)
+        return "s3"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def mov_w1h(robot: cozmo.robot.Robot):
-    print("mov_w1h action execution")
+    print("Robot mov_w1h action execution ...")
     try:
         robot.go_to_pose(exit_home, relative_to_robot=False).wait_for_completed(20)
         robot.go_to_pose(home, relative_to_robot=False).wait_for_completed(20)
         robot.say_text(text="I visited way point one and now I'm in my home").wait_for_completed(10)
         robot.play_anim(name="anim_memorymatch_successhand_cozmo_01").wait_for_completed(10)
+        return "s1"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def mov_w2h(robot: cozmo.robot.Robot):
-    print("mov_w2h action execution")
+    print("Robot mov_w2h action execution ...")
     try:
         robot.go_to_pose(exit_home, relative_to_robot=False).wait_for_completed(20)
         robot.go_to_pose(home, relative_to_robot=False).wait_for_completed(20)
         robot.say_text(text="I visited way point two and now I'm in my home").wait_for_completed(10)
         robot.play_anim(name="anim_memorymatch_successhand_cozmo_01").wait_for_completed(10)
+        return "s2"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def mov_w2w1(robot: cozmo.robot.Robot):
-    print("mov_w2w1 action execution")
+    print("Robot mov_w2w1 action execution ...")
     try:
         robot.go_to_pose(w1, relative_to_robot=False).wait_for_completed(20)
         cube1 = robot.world.get_light_cube(LightCube1Id)
         cube1.set_lights(cozmo.lights.Light(cozmo.lights.Color(rgb=(102, 255, 102), name="green")))
         robot.say_text(text="I visited way point two and now I'm in my way point one").wait_for_completed(10)
         robot.play_anim(name="anim_memorymatch_successhand_cozmo_01").wait_for_completed(10)
+        return "s3"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def mov_w12h(robot: cozmo.robot.Robot):
-    print("mov_w12h action execution")
+    print("Robot mov_w12h action execution ...")
     try:
         robot.go_to_pose(exit_home, relative_to_robot=False).wait_for_completed(20)
         robot.go_to_pose(home, relative_to_robot=False).wait_for_completed(20)
         robot.say_text(text="I visited way point one and two and now I'm in my home").wait_for_completed(10)
         robot.play_anim(name="anim_memorymatch_successhand_cozmo_01").wait_for_completed(10)
+        return "s4"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 def start(robot: cozmo.robot.Robot):
-    print("start action execution")
+    print("Robot start action execution ...")
     try:
         robot.say_text(text="I have a request to complete").wait_for_completed(10)
+        return "s0"
     except Exception as e:
         print("ERROR: %sn" + str(e))
+    return "err"
 
 
 # Actions in domain problem
