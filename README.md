@@ -2,7 +2,7 @@
 
 First experiments using COZMO robot
 
-Web project site: https://sites.google.com/studenti.uniroma1.it/reasoningagents/home-page
+Project web site: https://sites.google.com/studenti.uniroma1.it/reasoningagents/home-page
 
 Dependencies:
 
